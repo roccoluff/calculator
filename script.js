@@ -30,20 +30,21 @@ const operate = (no1, opera, no2) => {
     }
 };
 
-let result = document.getElementById("result");
-let count;
+let result  = document.getElementById("result"); // Was angezeigt wird auf dem Rechner
+let count; // Speichert ?
 let allButtons = document.querySelectorAll("input");
 allButtons.forEach((box) => {
     box.addEventListener("click", () => {
         //result.value = "";
-        if (box.value != '=') {
-            result.value += box.value;
-            count += box.value;
-        }
         if (box.value == '+' || box.value == '-' || box.value == '*' || box.value == '/') {
             firstNumber = parseFloat(result.value);
             operator = box.value;
             count = "";
+            box.style.backgroundColor = "red";
+        } // Operator should not be visible on result.value, and as soon as second number is pressed the second number should be the only visible number on the screen. (Plus button for example red and as soon as second number is pressed that back again to gren)
+        if (box.value != '=' && (box.value != '+' && box.value != '-' && box.value != '*' && box.value != '/')) {
+            result.value += box.value;
+            count += box.value;
         }
         if (box.value == '=') {
             //secondNumber = 2;
