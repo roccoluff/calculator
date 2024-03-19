@@ -38,7 +38,7 @@ allButtons.forEach((box) => {
     box.addEventListener("click", () => {
         //result.value = "";
         if (box.value == '.') { // Error Case so that Users don't press '.' twice in one equation
-            
+            //box.value = "";
         }
         if (box.value == '+' || box.value == '-' || box.value == '*' || box.value == '/') {
             count2++;
